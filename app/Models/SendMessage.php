@@ -7,6 +7,8 @@ use Illuminate\Database\Eloquent\Model;
 class SendMessage extends Model
 {
     protected $table = 'send_messages';
+
+    protected $dates = ['date_sent'];
     protected $fillable = [
         'success',
         'confirmation',
@@ -22,7 +24,7 @@ class SendMessage extends Model
             'success' => $this->success,
             'confirmation' => $this->confirmation,
             'message_id' => $this->message_id,
-            'date_sent' => $this->date_sent,
+            'date_sent' => $this->date_sent ? $this->date_sent->diffForHumans() : '',
             'error_message' => $this->error_message,
         ];
     }
