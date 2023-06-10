@@ -1,1 +1,1 @@
-CREATE DATABASE IF NOT EXISTS sms_application;
+CREATE DATABASE IF NOT EXISTS message_app;

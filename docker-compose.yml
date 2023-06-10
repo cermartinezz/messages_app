@@ -41,7 +41,7 @@ services:
             - messages_app-volume:/var/lib/mysql
             - ./docker/mysql/docker-entrypoint-initdb.d:/docker-entrypoint-initdb.d
         environment:
-            MYSQL_ROOT_PASSWORD: "cermartinezz"
+            MYSQL_ROOT_PASSWORD: "${DB_PASSWORD}"
         networks:
             - messages_app
 volumes:
