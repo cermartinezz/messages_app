@@ -18,8 +18,7 @@ class GuestController extends Controller
             $data = [
                 'id' => $uuid
             ];
-
-            $cookie = cookie('session', json_encode($data), 60);
+            $cookie = cookie('session', json_encode($data), 60,'',$request->getHost());
 
             return $this->respondSuccess('session', $data,[],['cookie' => $cookie]);
         }
